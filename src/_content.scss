@@ -1,0 +1,262 @@
+@use "./settings" as *;
+
+.main-content {
+    display: block;
+    height: auto;
+
+    @include breakpoint(phone, tablet) {
+        width: 100%;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        padding-left: $desktop-navbar-width;
+    }
+
+    section {
+        position: relative;
+        display: block;
+        min-height: 100vh;
+        height: auto;
+        width: 100%;
+    }
+}
+
+.section-content {
+    @include breakpoint(phone, tablet) {
+        padding: $size-xxl $size-m;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        padding: 0 $size-xxl;
+    }
+}
+
+#about-me {
+    background-color: $background-secondary;
+}
+
+#my-projects {
+    background-color: $background-secondary;
+
+    .section-content {
+        @include breakpoint(small-desktop, desktop) {
+            position: static;
+            transform: none;
+            padding: $size-xxl;
+        }
+    }
+}
+
+#contact {
+    .section-content {
+        width: auto;
+    }
+}
+
+.section-title {
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    color: $secondary;
+
+    @include breakpoint(phone, tablet) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+
+.section-subtitle {
+    font-weight: $font-medium;
+    text-transform: uppercase;
+    color: $primary;
+
+    @include breakpoint(phone, tablet) {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+.section-text {
+    font-weight: $font-light;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: $primary;
+}
+
+.project-card-group {
+    display: block;
+    width: 100%;
+    padding-top: $size-xxs;
+}
+
+.project-card {
+    background-color: $background-primary;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+    height: auto;
+    margin: 0 0 $size-m 0;
+
+    @include breakpoint(phone, tablet) {
+        max-width: $mobile-project-card-max-width;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        max-width: $desktop-project-card-max-width;
+    }
+
+    .tag-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        width: 100%;
+        padding: $size-s $size-s 0 $size-s;
+    }
+
+    h4 {
+        font-weight: $font-medium;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        color: $primary;
+        margin: $size-s;
+    }
+
+    p {
+        font-weight: $font-light;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 0 $size-s;
+    }
+}
+
+.project-card-image-container {
+    display: block;
+
+    @include breakpoint(phone, tablet) {
+        height: $mobile-project-card-max-width * 0.5625;
+        max-width: $mobile-project-card-max-width;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        height: $desktop-project-card-max-width * 0.5625;
+        max-width: $desktop-project-card-max-width;
+    }
+
+    img {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.project-card-default-image {
+    background-color: $primary;
+    background-image: url(./images/unity.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
+
+.project-card-link-group {
+    display: flex;
+    width: 100%;
+
+    a {
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: $font-regular;
+        font-size: 1rem;
+        line-height: 1rem;
+        white-space: nowrap;
+        border: 2px solid $secondary;
+        margin: $size-s 0 $size-s $size-s;
+        padding: $size-xxs;
+    }
+
+    .first {
+        background-color: $secondary;
+        color: $text-primary;
+    }
+
+    .last {
+        background-color: transparent;
+        color: $primary;
+    }
+}
+
+.contact-form {
+    display: block;
+    width: 100%;
+
+    textarea,
+    input {
+        display: block;
+        font-weight: $font-regular;
+        font-size: 1rem;
+        line-height: 1rem;
+        background-color: $background-secondary;
+        color: $primary;
+        width: 100%;
+        margin: $size-xs 0;
+        padding: $size-xxs;
+
+        &:focus {
+            outline-color: $secondary;
+        }
+
+        &::placeholder {
+            font-weight: $font-regular;
+            font-size: 1rem;
+            line-height: 1rem;
+        }
+    }
+
+    textarea {
+        line-height: 1.5rem;
+        resize: none;
+    }
+
+    button {
+        display: block;
+        font-weight: $font-regular;
+        font-size: 1rem;
+        line-height: 1rem;
+        text-transform: uppercase;
+        background-color: $secondary;
+        color: $text-primary;
+        width: 100%;
+        margin: $size-xs 0;
+        padding: $size-xxs;
+    }
+}
+
+.tag-group {
+    display: block;
+    width: 100%;
+    padding-top: $size-xxs;
+
+    p {
+        display: inline-block;
+        font-weight: $font-regular;
+        font-size: 1rem;
+        line-height: 1rem;
+        background-color: $primary;
+        color: $text-primary;
+        margin: 0 $size-xxs $size-xxs 0;
+        padding: $size-xxs;
+    }
+}

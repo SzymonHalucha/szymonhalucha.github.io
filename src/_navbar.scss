@@ -1,0 +1,164 @@
+@use "./settings" as *;
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 98;
+    background-color: $primary;
+
+    @include breakpoint(phone, tablet) {
+        height: $mobile-navbar-height;
+        width: 100vw;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        height: 100vh;
+        width: $desktop-navbar-width;
+    }
+}
+
+.navbar-container {
+    width: 100%;
+
+    @include breakpoint(phone, tablet) {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.navbar-title {
+    text-transform: uppercase;
+    font-weight: $font-bold;
+    color: $secondary;
+
+    @include breakpoint(phone, tablet) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin: auto 0;
+        padding-left: $size-xxs;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        padding-left: $size-xxl;
+    }
+}
+
+#hamburger-menu {
+    display: none;
+
+    @include breakpoint(phone, tablet) {
+        &:checked ~ #hamburger-menu-label {
+            background-image: url(./images/close.svg);
+        }
+
+        &:checked ~ .navbar-list {
+            transform: translateX(-100vw);
+        }
+    }
+}
+
+#hamburger-menu-label {
+    @include breakpoint(phone, tablet) {
+        display: block;
+        background-image: url(./images/hamburger.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 1.5rem;
+        width: 1.5rem;
+        margin: auto $size-xxs auto 0;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        display: none;
+    }
+}
+
+.navbar-list {
+    width: 100%;
+
+    @include breakpoint(phone, tablet) {
+        display: block;
+        position: absolute;
+        top: $mobile-navbar-height;
+        left: 100vw;
+        transform: none;
+        transition: transform 0.15s ease-in-out;
+        background-color: $primary;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        margin-top: $size-m;
+    }
+
+    li {
+        list-style: none;
+        line-height: 1rem;
+    }
+
+    a {
+        display: block;
+        font-weight: $font-regular;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $text-primary;
+
+        @include breakpoint(phone, tablet) {
+            padding: $size-xxs 0 $size-xxs $size-xxs;
+        }
+
+        @include breakpoint(small-desktop, desktop) {
+            padding: $size-xxs 0 $size-xxs $size-xxl;
+
+            &:hover {
+                background-color: $secondary;
+                box-shadow: -6px 0px 6px 0px rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+}
+
+.social-media {
+    @include breakpoint(phone, tablet) {
+        display: block;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        display: none;
+    }
+}
+
+.language-link {
+    display: flex;
+
+    @include breakpoint(phone, tablet) {
+        padding: $size-xxs 0 $size-xxs $size-xxs;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        margin-top: $size-m;
+        padding: $size-xxs 0 $size-xxs $size-xxl;
+    }
+
+    img {
+        display: block;
+        height: 1rem;
+    }
+
+    p {
+        line-height: 1rem;
+        font-weight: $font-regular;
+        text-transform: uppercase;
+        color: $text-disabled;
+        padding-left: $size-xxs;
+    }
+}

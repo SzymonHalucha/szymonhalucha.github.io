@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=min-device-width, initial-scale=1.0">
+    <title>Szymon Hałucha - Unity C# Developer</title>
+    <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, deleniti?">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap">
+    <script>function hideMenu() { document.getElementById("hamburger-menu").checked = false; }</script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h2 class="navbar-title">Szymon Hałucha</h2>
+            <input type="checkbox" id="hamburger-menu">
+            <label for="hamburger-menu" id="hamburger-menu-label"></label>
+            <ul class="navbar-list">
+                <li><a onclick="hideMenu();" href="#about-me">Kim Jestem</a></li>
+                <li><a onclick="hideMenu();" href="#skills">Umiejętności</a></li>
+                <li><a onclick="hideMenu();" href="#my-projects">Moje Projekty</a></li>
+                <li><a onclick="hideMenu();" href="#contact">Kontakt</a></li>
+                <li class="social-media"><a onclick="hideMenu();" href="#external-websites">Social Media</a></li>
+                <li class="language-link">
+                    <img src="./images/english.svg" alt="united kingdom flag">
+                    <p>English</p>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <section id="about-me">
+            <div class="section-content">
+                <h1 class="section-title">Kim Jestem?</h1>
+                <h3 class="section-subtitle">Trochę o Mnie</h3>
+                <p class="section-text">Programowaniem zainteresowałem się w gimnazjum, kiedy to natrafiłem na płytkę
+                    rozwojową Arduino, wtedy też nauczyłem się programować w języku C. W szkole średniej stworzyłem i
+                    prowadziłem koło robotyki "Robonomik". Zajmowałem się projektowaniem oraz programowaniem robotów.
+                    Razem z moją drużyną, startowałem w wojewódzkich jak i ogólnopolskich konkursach, między innymi:
+                    “Lubelskie: Liga Robotyki”, “FIRST Tech Challenge 2019”. W dalszym etapie rozwijałem swoją pasję do
+                    programowania ucząc się silnika Unity oraz C#, szczególnie przypadło mi do gustu proceduralne
+                    generowanie.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-content">
+                <h1 class="section-title">Umiejętności</h1>
+                <h3 class="section-subtitle">Co potrafię</h3>
+                <div class="tag-group">
+                    <p>Unity</p>
+                    <p>C#</p>
+                    <p>Wzorce Projektowe</p>
+                    <p>git</p>
+                    <p>GitHub</p>
+                    <p>Universal Render Pipeline</p>
+                    <p>Post Processing</p>
+                    <p>New Input System</p>
+                    <p>uGUI</p>
+                    <p>IMGUI</p>
+                    <p>UI Toolkit</p>
+                    <p>Proceduralne generowanie</p>
+                    <p>Narzędzia edytora</p>
+                    <p>Podstawy Shader Graph</p>
+                    <p>Podstawy Blendera</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="my-projects">
+            <div class="section-content">
+                <h1 class="section-title">Moje Projekty</h1>
+                <h3 class="section-subtitle">Co stworzyłem</h3>
+
+                <div class="project-card-group">
+
+                    <div class="project-card">
+                        <div class="project-card-image-container project-card-default-image">
+                            <!-- <img src="./images/1.png" alt="example image"> -->
+                        </div>
+                        <div class="tag-group">
+                            <p>Unity</p>
+                            <p>C#</p>
+                            <p>Proceduralne generowanie</p>
+                            <p>IMGUI</p>
+                            <p>UI Toolkit</p>
+                        </div>
+                        <h4>Road Creator</h4>
+                        <p>Jest to proste narzędzie dla edytora Unity, pozwalające na tworzenie wyglądu drogi oraz
+                            ścieżki, którą utworzona droga będzie podążać.</p>
+                        <div class="project-card-link-group">
+                            <a target="_blank" href="https://github.com/SzymonHalucha/RoadCreator" class="first">GitHub</a>
+                            <!-- <a href="#" class="last">Asset Store</a> -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-content">
+                <h1 class="section-title">Kontakt</h1>
+                <h3 class="section-subtitle">Postaram się odpowiedzieć jak najszybciej</h3>
+                <form target="_blank" action="https://formsubmit.co/1a6479f3431f599cdaa413d4bc0a6b1a" method="post"
+                    class="contact-form">
+                    <input type="text" name="name" placeholder="Twoje Imię" class="contact-form-input">
+                    <input type="text" name="email" placeholder="E-Mail" class="contact-form-input">
+                    <textarea name="message" rows="10" placeholder="Wiadomość..."
+                        class="contact-form-input contact-form-message"></textarea>
+                    <input type="hidden" name="_template" value="table">
+                    <button type="submit" class="contact-form-button">Wyślij Wiadomość</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="external-websites" class="footer">
+        <div class="footer-icon-group">
+            <a target="_blank" href="https://github.com/SzymonHalucha?tab=repositories"><img src="./images/github.svg" alt="github icon"></a>
+        </div>
+        <p class="footer-copyright">&copy; 2022 Szymon Hałucha</p>
+    </footer>
+
+</body>
+
+</html>

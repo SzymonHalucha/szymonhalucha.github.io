@@ -1,0 +1,59 @@
+//Colors
+$primary: #293540;
+$secondary: #f27c55;
+$background-primary: #ffffff;
+$background-secondary: #f8f8f8;
+$text-primary: rgba(255, 255, 255, 0.95);
+$text-secondary: rgba(255, 255, 255, 0.6);
+$text-disabled: rgba(255, 255, 255, 0.3);
+
+//Fonts
+$font-family: "Poppins", sans-serif;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 600;
+$font-bold: 800;
+
+//Sizes
+$size-xxs: 0.5rem; //8px
+$size-xs: 0.875rem; //14px
+$size-s: 1rem; //16px
+$size-m: 1.5rem; //24px
+$size-l: 2rem; //32px
+$size-xl: 3rem; //48px
+$size-xxl: 4rem; //64px
+
+//Custom Sizes
+$desktop-navbar-width: 24rem; //384px
+$desktop-project-card-max-width: 26rem; //384px
+$mobile-navbar-height: 3rem; //48px
+$mobile-project-card-max-width: 18rem; //288px
+
+//Media Queries
+@mixin breakpoint($keys...) {
+    @each $device in $keys {
+        @if ($device == phone) {
+            @media screen and (max-width: 500px) {
+                @content;
+            }
+        }
+
+        @if ($device == tablet) {
+            @media screen and (min-width: 501px) and (max-width: 1000px) {
+                @content;
+            }
+        }
+
+        @if ($device == small-desktop) {
+            @media screen and (min-width: 1001px) and (max-width: 1400px) {
+                @content;
+            }
+        }
+
+        @if ($device == desktop) {
+            @media screen and (min-width: 1401px) {
+                @content;
+            }
+        }
+    }
+}

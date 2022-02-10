@@ -1,0 +1,26 @@
+@use "./settings" as *;
+@use "./navbar";
+@use "./content";
+@use "./footer";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-family: $font-family;
+    font-weight: $font-light;
+    font-style: normal;
+
+    @include breakpoint(small-desktop) {
+        font-size: 13px;
+    }
+}

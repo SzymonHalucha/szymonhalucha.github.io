@@ -1,0 +1,41 @@
+@use "./settings" as *;
+
+.footer {
+    background-color: $primary;
+
+    @include breakpoint(phone, tablet) {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+
+    @include breakpoint(small-desktop, desktop) {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 99;
+        width: $desktop-navbar-width;
+    }
+}
+
+.footer-icon-group {
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+
+    a {
+        padding: $size-xxs;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+    }
+}
+
+.footer-copyright {
+    font-size: 0.875rem;
+    text-align: center;
+    color: $text-secondary;
+    padding-bottom: $size-xxs;
+}

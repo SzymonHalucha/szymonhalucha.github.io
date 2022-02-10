@@ -1,0 +1,12 @@
+{
+    "editor.fontSize": 14,
+    "editor.fontWeight": 300,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontWeight": 300,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000,
+    "editor.bracketPairColorization.enabled": true
+}
